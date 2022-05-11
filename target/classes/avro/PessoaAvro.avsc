@@ -1,0 +1,10 @@
+{
+  "type": "record",
+  "namespace": "com.filas.kafka.model",
+  "name": "PessoaAvro",
+  "version": "1",
+  "fields": [
+    { "name": "nome", "type": "string", "doc": "Nome da Pessoa" },
+    { "name": "sobreNome", "type": "string", "doc": "Sobre Nome da Pessoa" }
+  ]
+}
