@@ -1,6 +1,8 @@
 package com.filas.kafka.service;
 
+import com.filas.kafka.model.Auditor;
 import com.filas.kafka.model.Pessoa;
+import com.filas.kafka.producer.AuditorProducerImpl;
 import com.filas.kafka.producer.PessoaProducerImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,8 +13,13 @@ import java.util.UUID;
 public class ApplicationService {
     @Autowired
     PessoaProducerImpl pessoaProducer;
+    @Autowired
+    AuditorProducerImpl auditorProducer;
 
     public void sendMessage(Pessoa pessoa){
         pessoaProducer.persist(UUID.randomUUID().toString(), pessoa);
+    }
+    public void sendAuditorMessage(Auditor auditor){
+        auditorProducer.persist(UUID.randomUUID().toString(), auditor);
     }
 }

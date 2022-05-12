@@ -1,5 +1,6 @@
 package com.filas.kafka.controller;
 
+import com.filas.kafka.model.Auditor;
 import com.filas.kafka.model.Pessoa;
 import com.filas.kafka.service.ApplicationService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,12 @@ public class ApplicationController {
     @GetMapping("/producer")
     public ResponseEntity<?> producerRun(@RequestBody Pessoa pessoa) {
         applicationService.sendMessage(pessoa);
+        return ResponseEntity.status(HttpStatus.ACCEPTED).build();
+    }
+
+    @GetMapping("/producer-auditor")
+    public ResponseEntity<?> producerAuditorRun(@RequestBody Auditor auditor) {
+        applicationService.sendAuditorMessage(auditor);
         return ResponseEntity.status(HttpStatus.ACCEPTED).build();
     }
 }

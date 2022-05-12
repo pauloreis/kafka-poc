@@ -1,0 +1,11 @@
+{
+  "type": "record",
+  "namespace": "com.filas.kafka.model",
+  "name": "AuditorAvro",
+  "version": "1",
+  "fields": [
+    { "name": "id", "type": "long", "doc": "Id do Auditor" },
+    { "name": "transactionId", "type": "string", "doc": "UUID do Auditor" },
+    { "name": "qtd", "type": "int", "doc": "Qtd Cartelas" }
+  ]
+}
